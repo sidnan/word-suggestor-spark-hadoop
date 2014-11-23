@@ -24,9 +24,11 @@ This copies the files from the File System to HDFS using Hadoop Java API
 This uses hadoop-0.23.3-dev-core.jar
 Tested on hadoop-2.4.0.
 
-*How to Run:-*
-1. Prepare a jar
-2. ``` ./bin/hadoop jar /home/sidnan/workspace/test.jar sid.hdfs.FSToHDFSApplication ``` 
+**How to Run**
+* Update the file with your hdfs path
+* Prepare a jar
+* ``` ./bin/hadoop jar /path/to/created/jar.jar sid.hdfs.FSToHDFSApplication ```.
+*Example* ``` ./bin/hadoop jar /home/sidnan/workspace/test.jar sid.hdfs.FSToHDFSApplication ``` 
 
 
 # AnagramWordList.java
@@ -37,19 +39,25 @@ And save the result <k,v> in the HDFS file.
 This uses hadoop-0.23.3-dev-core.jar, spark-core_2.10-1.1.0.jar, scala-library-2.11.2.jar
 Tested on hadoop-2.4.0, spark-1.0.0-bin-hadoop2.
 
-*How to Run:-*
-1. Prepare a jar 
-2. ``` ./bin/spark-submit --class sid.hdfs.AnagramWordList --master local /home/sidnan/workspace/test.jar ```
+**How to Run:-**
+* Update the file with your hdfs path
+* Prepare a jar 
+* ``` ./bin/spark-submit --class sid.hdfs.AnagramWordList --master <master_name> /path/to/created/jar.jar ```
+*Example* ``` ./bin/spark-submit --class sid.hdfs.AnagramWordList --master local /home/sidnan/workspace/test.jar ```
 
 
 
-# FSToHDFSApplication.java
+# FindTheWords.java
 
-This copy the files from the File System to HDFS using Hadoop Java API
-This uses hadoop-0.23.3-dev-core.jar
-Tested on hadoop-2.4.0.
+This is used to find the possible words (anagrams) based on given input word using Apache Spark Java API.
+Sort the input characters into a key to search the anagram data list.
+The data list is in HDFS.
+This uses hadoop-0.23.3-dev-core.jar, spark-core_2.10-1.1.0.jar, scala-library-2.11.2.jar
+Tested on hadoop-2.4.0, spark-1.0.0-bin-hadoop2.
 
-*How to Run:-*
-1. Prepare a jar 
-2. ```./bin/spark-submit --class sid.hdfs.FSToHDFSApplication --master local /home/sidnan/workspace/test.jar```
+**How to Run:-**
+* Update the file with your hdfs path
+* Prepare a jar 
+* ```./bin/spark-submit --class sid.hdfs.FindTheWords --master <master_name> /path/to/creatd/jar.jar```
+*Example* ```./bin/spark-submit --class sid.hdfs.FindTheWords --master local /home/sidnan/workspace/test.jar```
 
